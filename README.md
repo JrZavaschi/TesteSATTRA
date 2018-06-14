@@ -15,3 +15,5 @@ No arquivo bancoDados.php, altere o nome da base de dados, usuário e senha com 
 
 -- Acessando a aplicação:
 - Acesse no navegador seu servidor de hospedagem da aplicação/nome da aplicação, o arquivo index.php na raiz da aplicação irá direcionar para o cadastro de pessoa.
+
+[..]
