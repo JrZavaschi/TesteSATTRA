@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link href='//fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css' >
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<section id="header">
+		<h3><i class="fa fa-users"></i>	Cadastro de pessoa</h3>
+	</section>
+	<section id="menu">
+		<div class="container-fluid">
+			<a href="pessoaInserir.html">
+				<button type="button" class="btn btn-info">
+					Inserir
+				</button>
+			</a>
+		</div>
+		<div id="app">
+		</div>
+	</section>
+	
+	<section id="pessoaGrid">
+		<div class="col-sm-12" id="retornoForm"></div>
+		<div class="row">
+			<div class="container-fluid">
+				<table class="table table-striped">
+					<thead>
+						<th>Codigo</th>
+						<th>Nome</th>
+						<th>CPF/CNPJ</th>
+						<th>E-mail</th>
+						<th><i class="fa fa-cogs"></i></th>
+					</thead>
+					<tbody>
+						<tr v-for="row in pessoas" :key="row.NOME">
+						    <td>{{ row.HANDLE }}</td>
+						    <td>{{ row.NOME }}</td>
+						    <td>{{ row.CPFCNPJ }}</td>
+						    <td>{{ row.EMAIL }}</td>
+							<td>
+								<a :href="'pessoaEditar.html?h=' + row.HANDLE">
+									<i class="fa fa-pencil btn btn-info"></i>
+								</a>
+								<a :href="'../../controller/php/pessoaExcluir.php?h=' + row.HANDLE">
+									<i class="fa fa-trash btn btn-danger"></i>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<section id="footer">
+		&copy; 2018 TesteSATTRA 
+	</section>
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!-- Bootstrap in cdn -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<!-- VUE.JS in cdn -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+	<script src="../../model/js/scriptPessoa.vue.js"></script>
+</body>
+</html>

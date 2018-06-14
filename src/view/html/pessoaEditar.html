@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link href='//fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css' >
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<section id="header">
+		<h3><i class="fa fa-users"></i>	Cadastro de pessoa - Inserir</h3>
+	</section>
+	<section id="menu">
+		<div class="container-fluid">
+			<a href="pessoa.html">
+				<button type="button" class="btn btn-info">
+					<i class="fa fa-arrow-left"></i> Listar pessoas
+				</button>
+			</a>
+		</div>
+	</section>
+	
+	<section id="pessoaForm">
+		<div class="row">
+			<div class="container-fluid">
+				<div class="col-sm-12" id="retornoForm"></div>
+				<form  method="post" id="formPessoaEditar">
+					<div class="col-sm-6">
+						<div class="form-group" v-for="NOME in pessoa">
+							<label for="nome">Nome</label>
+							<input type="text" name="nome" id="nome" placeholder="Seu nome" :value="pessoa[0].NOME"  class="form-control" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="CPFCNPJ in pessoa">
+							<label for="cpfcnpj">CPF/CNPJ</label>
+							<input type="text" name="cpfcnpj" id="cpfcnpj" :value="pessoa[0].CPFCNPJ"  placeholder="CPFCNPJ" class="form-control" />	
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="TELEFONE in pessoa">
+							<label for="telefone">Telefone</label>
+							<input type="tel" name="telefone" id="telefone" :value="pessoa[0].TELEFONE"  placeholder="Telefone" class="form-control" />	
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="EMAIL in pessoa">
+							<label for="email">E-mail</label>
+							<input type="email" name="email" id="email" :value="pessoa[0].EMAIL" placeholder="email" class="form-control" />	
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="CEP in pessoa">
+							<label for="cep">CEP</label>
+							<input type="text" name="cep" id="cep" :value="pessoa[0].CEP"  placeholder="CEP" v-on:blur="buscaCEP()" class="form-control" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="LOGRADOURO in pessoa">
+							<label for="logradouro">Logradouro</label>
+							<input type="text" name="logradouro" id="logradouro" placeholder="Logradouro" class="form-control" disabled :value="endereco.logradouro" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="NUMERO in pessoa">
+							<label for="numero">Número</label>
+							<input type="text" name="numero" id="numero" :value="pessoa[0].NUMERO"  placeholder="Número" class="form-control" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="COMPLEMENTO in pessoa">
+							<label for="complemento">Complemento</label>
+							<input type="text" name="complemento" id="complemento" :value="pessoa[0].COMPLEMENTO"  placeholder="Complemento" class="form-control" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="BAIRRO in pessoa">
+							<label for="bairro">Bairro</label>
+							<input type="text" name="bairro" id="bairro" placeholder="Bairro" class="form-control" disabled :value="endereco.bairro" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="MUNICIPIO in pessoa">
+							<label for="municipio">Municipio</label>
+							<input type="text" name="municipio" id="municipio" placeholder="Municipio" class="form-control" disabled :value="endereco.localidade" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="UF in pessoa">
+							<label for="uf">UF</label>
+							<input type="text" name="uf" id="uf" placeholder="UF" class="form-control" disabled :value="endereco.uf" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" v-for="OBSERVACOES in pessoa">
+							<label for="observacoes">Observações</label>
+							<textarea name="observacoes" id="observacoes" cols="100" rows="10" placeholder="Observações" class="form-control">{{pessoa[0].OBSERVACOES}}</textarea>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<button type="submit" class="btn btn-success" name="gravarPessoa">Gravar</button>
+					</div>
+					<!-- input handle value -->
+					<div v-for="HANDLE in pessoa" hidden="true">
+						<input type="text" name="h" id="h"  :value="pessoa[0].HANDLE" class="form-control" hidden="true"
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<section id="footer">
+		&copy; 2018 TesteSATTRA 
+	</section>
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!-- Bootstrap in cdn -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- VUE.JS in cdn -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+	<script src="https://cdn.ravenjs.com/3.8.0/raven.min.js"></script>
+	<!-- custom JS local -->
+	<script src="../../model/js/scriptGlobal.js"></script>
+	<script src="../../model/js/scriptPessoaEditar.vue.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	height: auto;
+	width: 100%;
+	overflow-x: hidden;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+#header{
+	color: aliceblue;
+	background-color: #138496;
+	padding: 1em;
+	width: 100%;
+	height: auto;
+}
+#menu{
+	width: 100%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	-webkit-box-shadow:0px 0px 1px #525252;
+	-moz-box-shadow:0px 0px 1px #525252;
+	box-shadow:0px 0px 1px #525252;
+}
+#footer{
+	color: aliceblue;
+	background-color: #138496;
+	padding: 1em;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin-top: 1em;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0;
+	bottom: 0;
+}
+#pessoaForm{
+	margin-top: 1em;
+	width: 100%;
+}
