@@ -1,8 +1,9 @@
 # TesteSATTRA
 Teste proposto para execução com VUE.JS
 
--- PHP 7.0
--- VUE.JS 2
+- PHP 7.0
+- VUE.JS 2
+- MVC structure
 
 -- Instalando a aplicação:
 - Copie os arquivos da pasta src para sua webapps do apache.
