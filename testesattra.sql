@@ -1,0 +1,55 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `testesattra`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pessoa`
+--
+
+CREATE TABLE `pessoa` (
+  `HANDLE` int(10) NOT NULL,
+  `NOME` varchar(99) DEFAULT NULL,
+  `CPFCNPJ` varchar(18) DEFAULT NULL,
+  `TELEFONE` varchar(16) DEFAULT NULL,
+  `EMAIL` varchar(99) DEFAULT NULL,
+  `CEP` varchar(9) DEFAULT NULL,
+  `LOGRADOURO` varchar(99) DEFAULT NULL,
+  `NUMERO` varchar(10) DEFAULT NULL,
+  `COMPLEMENTO` varchar(99) DEFAULT NULL,
+  `BAIRRO` varchar(99) DEFAULT NULL,
+  `MUNICIPIO` varchar(99) DEFAULT NULL,
+  `UF` varchar(2) DEFAULT NULL,
+  `OBSERVACOES` text,
+  `LOGDATACADASTRO` datetime DEFAULT NULL,
+  `LOGDATAALTERACAO` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for table `pessoa`
+--
+ALTER TABLE `pessoa`
+  ADD PRIMARY KEY (`HANDLE`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `pessoa`
+--
+ALTER TABLE `pessoa`
+  MODIFY `HANDLE` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
